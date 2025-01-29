@@ -1,0 +1,25 @@
+{
+	"name": "moomoo-bundle",
+	"version": "1.0.0",
+	"description": "A usable bundle for making moomoo.io hacks from",
+	"license": "MIT",
+	"author": "javedpension",
+	"main": "./dist/bundle.js",
+	"scripts": {
+		"build": "biome format --write && biome check --write && node esbuild.config.js --watch && chmod -R u+rwx,g+rwx,o+rwx ./src && clear"
+	},
+	"dependencies": {
+		"esbuild": "^0.24.2",
+		"fs": "^0.0.1-security",
+		"howler": "^2.2.4",
+		"lodash-es": "^4.17.21",
+		"msgpack-lite": "^0.1.26",
+		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.26.7",
+		"@babel/preset-env": "^7.26.7",
+		"babel-loader": "^9.2.1",
+		"babel-plugin-lodash": "^3.3.4"
+	}
+}
