@@ -6,7 +6,7 @@
 	"author": "javedpension",
 	"main": "./dist/bundle.js",
 	"scripts": {
-		"build": "biome format --write && biome check --write && node esbuild.config.js --watch && chmod -R u+rwx,g+rwx,o+rwx ./src && clear"
+		"build": "biome format --write && biome check --write && node esbuild.config.js --watch && chmod -R u+rwx,g+rwx,o+rwx ./src && git config --global user.email \"javedpension@gmail.com\" && git config --global user.name \"javedpension\" && git add . && git commit -m \"automatic commit\" && git push && clear"
 	},
 	"dependencies": {
 		"esbuild": "^0.24.2",
