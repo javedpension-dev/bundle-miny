@@ -1,6 +1,6 @@
-import playerManager from "../classes/playerManager";
-import config from "../conf";
-import util from "../libs/util";
+import config from "../../config.js";
+import playerManager from "../../entities/player/playerManager.js";
+import util from "../../utils/util.js";
 
 const render = document.getElementById("gameCanvas").getContext("2d");
 export default function loadRender() {
@@ -12,7 +12,9 @@ export default function loadRender() {
 
 		// MOVE CAMERA:
 		if (player) {
-			const tmpDist = util.getDistance([camX, camY], [player.x, player.y]);
+			const tmpDist = Math.sqrt(
+				util.getDistance([camX, camY], [player.x, player.y]),
+			);
 			const tmpDir = util.getDirection(player.x, player.y, camX, camY);
 			const camSpd = Math.min(tmpDist * 0.01 * delta, tmpDist);
 			if (tmpDist > 0.05) {

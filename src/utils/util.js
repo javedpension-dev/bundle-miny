@@ -1,4 +1,4 @@
-import playerManager from "../classes/playerManager";
+import playerManager from "../entities/player/playerManager";
 
 const PI = Math.PI;
 const PI2 = Math.PI * 2;

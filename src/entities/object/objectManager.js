@@ -1,5 +1,5 @@
 import { chunk } from "lodash-es";
-import { itemList } from "../libs/items";
+import { itemList } from "../../utils/items";
 import object from "./object";
 
 const objectManager = new (class {

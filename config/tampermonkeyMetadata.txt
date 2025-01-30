@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         New Userscript
 // @namespace    https://discord.gg/fPaEzeEkn5
-// @version      0.13.8
+// @version      1.3.8
 // @description  usable and readable bundle for making hacks for moomoo.io
 // @author       javedpension
 // @match        *://*.moomoo.io/*

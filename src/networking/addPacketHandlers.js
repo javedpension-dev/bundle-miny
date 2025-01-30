@@ -1,9 +1,9 @@
-import objectManager from "./classes/objectManager.js";
-import playerManager from "./classes/playerManager.js";
-import tryAutoMill from "./combatUtilities/Placement/mill.js";
-import client from "./index.js";
-import log from "./libs/log.js";
-import SoundManager from "./libs/sound.js";
+import client from "../core/index.js";
+import objectManager from "../entities/object/objectManager.js";
+import playerManager from "../entities/player/playerManager.js";
+import tryAutoMill from "../systems/combat/Placement/mill.js";
+import log from "../utils/log.js";
+import SoundManager from "../utils/sound.js";
 
 export default function addPacketHandlers() {
 	try {

@@ -1,7 +1,6 @@
-import playerManager from "../../classes/playerManager.js";
-import client from "../../index.js";
-import { itemList } from "../../libs/items.js";
-import util from "../../libs/util.js";
+import playerManager from "../../../entities/player/playerManager.js";
+import { itemList } from "../../../utils/items.js";
+import util from "../../../utils/util.js";
 import place from "../place";
 
 export const automill = {

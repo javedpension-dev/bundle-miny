@@ -5,10 +5,10 @@ MAIN FILE.
 */
 
 import { chunk } from "lodash-es";
-import addPacketHandlers from "./addPacketHandlers.js";
-import Client from "./classes/client.js";
-import addDocumentListeners from "./documentListeners.js";
-import log from "./libs/log.js";
+import addPacketHandlers from "../networking/addPacketHandlers.js";
+import addDocumentListeners from "../networking/documentListeners.js";
+import log from "../utils/log.js";
+import Client from "./client.js";
 
 const client = new Client();
 export default client;

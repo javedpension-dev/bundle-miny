@@ -1,12 +1,12 @@
-import conf from "../conf";
-import { hats, weapons } from "../libs/items";
+import config from "../../config.js";
+import { hats, weapons } from "../../utils/items.js";
 
 export default class player {
 	constructor(sid) {
 		this.sid = sid;
-		this.health = conf.playerHealth;
+		this.health = config.playerHealth;
 		this.maxHealth = this.health;
-		this.scale = conf.playerScale;
+		this.scale = config.playerScale;
 		this.dt = 0;
 		this.x = 0;
 		this.y = 0;

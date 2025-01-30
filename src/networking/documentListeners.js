@@ -1,7 +1,7 @@
-import { automill } from "./combatUtilities/Placement/mill";
-import log from "./libs/log";
-import SoundManager from "./libs/sound";
-import loadRender from "./render/render";
+import { automill } from "../systems/combat/Placement/mill.js";
+import loadRender from "../systems/render/render.js";
+import log from "../utils/log.js";
+import SoundManager from "../utils/sound.js";
 
 export default function addDocumentListeners() {
 	document.addEventListener("keydown", (event) => {
