@@ -6,7 +6,7 @@
 	"author": "javedpension",
 	"main": "./dist/bundle.js",
 	"scripts": {
-		"build": "biome format --write && biome check --write && node ./config/esbuild.config.js --watch && sudo chmod -R u+rwx,g+rwx,o+rwx . && npx documentation build src/** -f html -o doct && git config --global user.email \"javedpension@gmail.com\" && git config --global user.name \"javedpension\" && git add . && git commit -m \"automatic commit\" && git push origin master && clear",
+		"build": "biome format --write && biome check --write && node ./config/esbuild.config.js --watch && sudo chmod -R u+rwx,g+rwx,o+rwx . && npx documentation build src/** -f html -o docs && git config --global user.email \"javedpension@gmail.com\" && git config --global user.name \"javedpension\" && git add . && git commit -m \"automatic commit\" && git push origin master && clear",
 		"docgen": "jsdoc-generator ./src/**/*.js"
 	},
 	"dependencies": {
