@@ -4,6 +4,7 @@ import util from "../../../utils/util.js";
 import place from "../place";
 
 /** @type {object} */
+/** @namespace */
 export const automill = {
 	do: false,
 	last: {
@@ -13,6 +14,10 @@ export const automill = {
 	angleapart: (Math.PI / 50) * 20,
 };
 
+/**
+ *
+ * @memberof automill
+ */
 export default function tryAutoMill() {
 	if (!automill.do) return;
 

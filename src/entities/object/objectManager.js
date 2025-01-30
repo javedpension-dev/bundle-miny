@@ -6,7 +6,14 @@ const objectManager = new (class {
 	/** @type {Array} */
 	static buildings = [];
 
-	addGameObject(data /** @type {Array} */) {
+	/**
+	 *
+	 * @name Add Game Object.
+	 * @description Adds a game object to our cache.
+	 * @param {Array} data - Contains information about the object to add, Compacted array.
+	 * @memberof objectManager
+	 */
+	addGameObject(data) {
 		const object_data = chunk(data[0], 8);
 
 		for (const chunk /** @type {Array} */ of object_data) {
@@ -26,10 +33,25 @@ const objectManager = new (class {
 		}
 	}
 
+	/**
+	 *
+	 * @name removeGameObject
+	 * @description Removes an object from our cache using it's SID.
+	 * @param {Array} sid - Session I.D. of the building.
+	 * @memberof objectManager
+	 */
 	removeGameObject(sid /** @type {number} */) {
 		buildings.splice(this.getObjectBySid(sid), 1);
 	}
 
+	/**
+	 *
+	 * @name Get Object By SID.
+	 * @description Retrieves an object through it's session i.d.
+	 * @param {number} sid - Session I.D. of the building.
+	 * @memberof objectManager
+	 * @returns object
+	 */
 	getObjectBySid(sid /** @type {number} */) {
 		return this.buildings.find((building) => building.sid === sid);
 	}

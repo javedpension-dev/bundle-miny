@@ -2,6 +2,7 @@
 MAIN FILE.
 
 
+kys i am not doing jackshit with this ugly ass file
 */
 
 import { chunk } from "lodash-es";

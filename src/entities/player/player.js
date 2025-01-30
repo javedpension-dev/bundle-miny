@@ -1,10 +1,14 @@
 import config from "../../config.js";
 import { hats, weapons } from "../../utils/items.js";
 
+/**
+ * @class player
+ */
 export default class player {
 	/**
 	 *
-	 * @param {number} sid - session i.d. of the player, used for identification.
+	 * @constructor
+	 * @param {number} sid - Session I.D. of the player, used for identification.
 	 */
 	constructor(sid) {
 		this.sid = sid;
@@ -35,7 +39,8 @@ export default class player {
 
 	/**
 	 *
-	 * @description assigns default data to player.
+	 * @name Set Data.
+	 * @description Assigns default data to player.
 	 * @param {object} data
 	 */
 	setData(data) {
@@ -59,7 +64,7 @@ export default class player {
 	}
 
 	/**
-	 * @description called when player hits.
+	 * @description Called when player hits.
 	 */
 	justHit() {
 		this.reloads[this.weaponIndex] =

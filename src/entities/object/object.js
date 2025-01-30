@@ -1,18 +1,20 @@
 /**
- *
+ * @class object
  */
 export default class object {
 	/**
 	 *
-	 * @param {number} sid - session identification, used to identify the building.
-	 * @param {number} x - x coordinate.
-	 * @param {number} y - y coordinate.
-	 * @param {number} dir - direction (radians).
-	 * @param {number} scale - size.
-	 * @param {number} type - type.
-	 * @param {object} rawData - information about the building.
-	 * @param {boolean} setSID - whether or not to overwrite sid.
-	 * @param {number} ownerSID - session i.d. of the person who placed this building (null if its naturally spawning).
+	 * @param {number} sid - Session identification, used to identify the building.
+	 * @param {number} x - x coordinate on cartesian plane.
+	 * @param {number} y - y coordinate on cartesian plane.
+	 * @param {number} dir - Direction (radians).
+	 * @param {number} scale - Size in game units.
+	 * @param {number} type - Type.
+	 * @param {object} rawData - Information about the building.
+	 * @param {boolean} setSID - Whether or not to overwrite sid.
+	 * @param {number} ownerSID - Session i.d. of the person who placed this building (null if its naturally spawning).
+	 * @constructor
+	 * @memberof object
 	 */
 	constructor(sid, x, y, dir, scale, type, rawData, setSID, ownerSID) {
 		const data = rawData || {};
@@ -56,9 +58,12 @@ export default class object {
 
 	/**
 	 *
+	 * @name Real Scale.
+	 * @description Returns the true scale of an object's hitbox.
 	 * @param sM
 	 * @param ig
-	 * @returns {number} real scale of the object hitbox.
+	 * @returns {number} Real scale of the object hitbox.
+	 * @memberof object
 	 */
 	getTrueScale(sM, ig) {
 		return (
@@ -72,7 +77,10 @@ export default class object {
 
 	/**
 	 *
-	 * @param {number} value - the amount to change the health by, needs to be absolute (e.g. -25, 30, -60).
+	 * @name Change Health.
+	 * @description Changes the health of the object by the desired amount.
+	 * @param {number} value - The amount to change the health by, needs to be absolute (e.g. -25, 30, -60).
+	 * @memberof object
 	 */
 	changeHealth(value) {
 		this.health += value;

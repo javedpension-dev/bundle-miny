@@ -1,6 +1,10 @@
 import { chunk } from "lodash-es";
 import player from "./player";
 
+/**
+ *
+ * @class playerManager
+ */
 const playerManager = new (class {
 	/** @type {Array} */
 	static players = [];
@@ -15,11 +19,28 @@ const playerManager = new (class {
 		return this.constructor.players;
 	}
 
-	getPlayerBySid(sid /** @type {number} */) {
+	/**
+	 *
+	 * @name Get Player by SID.
+	 * @description Retrieves a player through it's session i.d.
+	 * @param {number} sid - Session I.D. of the player.
+	 * @memberof playerManager
+	 * @returns player
+	 */
+	getPlayerBySid(sid) {
 		return this.constructor.players.find((player) => player.sid === sid);
 	}
 
-	add(data /** @type {Array} */, isYou /** @type {boolean} */) {
+	/**
+	 *
+	 * @name Get Player by SID.
+	 * @description Retrieves a player through it's session i.d.
+	 * @param {Array} data - Data of the new player.
+	 * @param {boolean} isYou - Is the player you.
+	 * @memberof playerManager
+	 * @returns player
+	 */
+	add(data, isYou) {
 		/** @type {object} */
 		const tmpPlayer = new player(data[1]);
 		tmpPlayer.setData(data);
@@ -29,18 +50,30 @@ const playerManager = new (class {
 		}
 
 		this.constructor.players.push(tmpPlayer);
-
-		console.warn(this.constructor.players);
 	}
 
-	remove(sid /** @type {number} */) {
+	/**
+	 *
+	 * @name Remove Player by SID.
+	 * @description Removes a player through it's session i.d.
+	 * @param {number} sid - Session I.D. of the player.
+	 * @memberof playerManager
+	 */
+	removePlayerBySid(sid) {
 		this.constructor.players.splice(
 			this.constructor.players.find((player) => player.sid === sid),
 			1,
 		);
 	}
 
-	update(data /** @type {Array} */) {
+	/**
+	 *
+	 * @name Update Players.
+	 * @description Updates the player's information.
+	 * @param {Array} data - Session I.D. of the player.
+	 * @memberof playerManager
+	 */
+	update(data) {
 		/** @type {Array} */
 		const chunkedData = chunk(data, 13);
 

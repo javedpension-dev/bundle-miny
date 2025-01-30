@@ -4,6 +4,7 @@ import util from "../../utils/util.js";
 
 const render = document.getElementById("gameCanvas").getContext("2d");
 /**
+ * @namespace Render
  * @description initializes the render sequence.
  */
 export default function loadRender() {
@@ -13,8 +14,13 @@ export default function loadRender() {
 	/** @type {Date} */
 	let lastUpdate = Date.now();
 
+	/**
+	 * @name Update Game.
+	 * @description Updates the Canvas2D Context.
+	 * @memberof Render
+	 */
 	function updateGame() {
-		/** @type {object} */
+		/** @type {player} */
 		const player = playerManager.myPlayer;
 
 		// MOVE CAMERA:
@@ -95,6 +101,9 @@ export default function loadRender() {
 			window.setTimeout(callback, 1000 / 60);
 		}))();
 
+	/**
+	 * @memberof Render
+	 */
 	function doUpdate() {
 		/** @type {Date} */
 		const now = Date.now();
