@@ -42,6 +42,8 @@ export default class player {
 	 * @name Set Data.
 	 * @description Assigns default data to player.
 	 * @param {object} data
+	 * @example
+	 * <player>.setData([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 	 */
 	setData(data) {
 		[

@@ -28,6 +28,8 @@ const playerManager = new (class {
 	 * @description Retrieves all players in memory.
 	 * @memberof playerManager
 	 * @returns player[]
+	 * @example
+	 * const players = <playerManager>.allPlayers;
 	 */
 	get allPlayers() {
 		return this.constructor.players;
@@ -40,6 +42,8 @@ const playerManager = new (class {
 	 * @param {number} sid - Session I.D. of the player.
 	 * @memberof playerManager
 	 * @returns player
+	 * @example
+	 * <playerManager>.getPlayerBySid(69420);
 	 */
 	getPlayerBySid(sid) {
 		return this.constructor.players.find((player) => player.sid === sid);
@@ -53,6 +57,8 @@ const playerManager = new (class {
 	 * @param {boolean} isYou - Is the player you.
 	 * @memberof playerManager
 	 * @returns player
+	 * @example
+	 * <playerManager>.add([1, 2, 3, 4, 5, 6, 7, 8, 9], true);
 	 */
 	add(data, isYou) {
 		/** @type {object} */
@@ -72,6 +78,8 @@ const playerManager = new (class {
 	 * @description Removes a player through it's session i.d.
 	 * @param {number} sid - Session I.D. of the player.
 	 * @memberof playerManager
+	 * @example
+	 * <playerManager>.removePlayerBySid(69420);
 	 */
 	removePlayerBySid(sid) {
 		this.constructor.players.splice(

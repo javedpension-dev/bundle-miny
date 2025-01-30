@@ -76,8 +76,17 @@ export default function loadRender() {
 			}
 
 			// RENDER CORDS:
-			/** @type {number} */
+			/**
+			 * @name xOffset
+			 * @memberof Render
+			 * @type {number}
+			 */
 			const xOffset = camX - config.maxScreenWidth / 2;
+			/**
+			 * @name yOffset
+			 * @memberof Render
+			 * @type {number}
+			 */
 			const yOffset = camY - config.maxScreenHeight / 2;
 
 			for (const tmp /** @type {object} */ of playerManager.allPlayers) {

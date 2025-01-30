@@ -71,6 +71,8 @@ export default class object {
 	 * @description Changes the health of the object by the desired amount.
 	 * @param {number} value - The amount to change the health by, needs to be absolute (e.g. -25, 30, -60).
 	 * @memberof object
+	 * @example
+	 * <object>.changeHealth(-20);
 	 */
 	changeHealth(value) {
 		this.health += value;

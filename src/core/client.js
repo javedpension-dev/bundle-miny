@@ -16,8 +16,10 @@ export default class Client {
 	 *
 	 * @name Assign WebSocket.
 	 * @description Assigns and stores the game's websocket instance in cache.
-	 * @param {object} ws - the websocket created by the bundle.
+	 * @param {WebSocket} ws - The WebSocket created by the bundle.
 	 * @memberof Client
+	 * @example
+	 * <Client>.assignWS(WebSocket);
 	 */
 	assignWS(ws) {
 		this.ws = ws;
@@ -35,6 +37,8 @@ export default class Client {
 	 * @param {Array} data - The data to send to the server.
 	 * @example <Client>.send(["6", ["Chat message"]]);
 	 * @memberof Client
+	 * @example
+	 * <Client>.send(["6", ["Chat message"]]);
 	 */
 	send(data) {
 		this.ws.send(new Uint8Array(Array.from(encode(data))));
@@ -47,6 +51,8 @@ export default class Client {
 	 * @param {any} data - The incoming message.
 	 * @returns {object}
 	 * @memberof Client
+	 * @example
+	 * const data = <Client>.decode(<WebSocketEvent>.data);
 	 */
 	decode(data) {
 		try {
@@ -63,6 +69,10 @@ export default class Client {
 	 * @param {string} type - The type of packet.
 	 * @param {function} handler - The event(s) that will be triggered.
 	 * @memberof Client
+	 * @example
+	 * <Client>.registerPacketHandler("C", () => {
+	 *     console.log("Game Ready!");
+	 * });
 	 */
 	registerPacketHandler(type, handler) {
 		this.packetHandlers.set(type, handler);
@@ -74,6 +84,10 @@ export default class Client {
 	 * @description Receives incoming messages from the game.
 	 * @param {object} event - Message event. Use <event>.data to get the data.
 	 * @memberof Client
+	 * @example
+	 * <WebSocket>.addEventListener("message", (event) => {
+	 *     <Client>.receive(<WebSocketEvent>);
+	 * })
 	 */
 	receive(event) {
 		const data = this.decode(event.data);

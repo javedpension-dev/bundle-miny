@@ -2,6 +2,10 @@ import { chunk } from "lodash-es";
 import { itemList } from "../../utils/items";
 import object from "./object";
 
+/**
+ *
+ * @class objectManager
+ */
 const objectManager = new (class {
 	/** @type {Array} */
 	static buildings = [];
@@ -12,6 +16,8 @@ const objectManager = new (class {
 	 * @description Adds a game object to our cache.
 	 * @param {Array} data - Contains information about the object to add, Compacted array.
 	 * @memberof objectManager
+	 * @example
+	 * <objectManager>.addGameObject([1, 2, 3, 4, 5, 6, 7, 8]);
 	 */
 	addGameObject(data) {
 		const object_data = chunk(data[0], 8);
@@ -39,8 +45,10 @@ const objectManager = new (class {
 	 * @description Removes an object from our cache using it's SID.
 	 * @param {Array} sid - Session I.D. of the building.
 	 * @memberof objectManager
+	 * @example
+	 * <objectManager>.removeGameObject(69420);
 	 */
-	removeGameObject(sid /** @type {number} */) {
+	removeGameObject(sid) {
 		buildings.splice(this.getObjectBySid(sid), 1);
 	}
 
@@ -51,6 +59,8 @@ const objectManager = new (class {
 	 * @param {number} sid - Session I.D. of the building.
 	 * @memberof objectManager
 	 * @returns object
+	 * @example
+	 * <objectManager>.getObjectBySid(69420); // returns specified object if found, else null.
 	 */
 	getObjectBySid(sid /** @type {number} */) {
 		return this.buildings.find((building) => building.sid === sid);

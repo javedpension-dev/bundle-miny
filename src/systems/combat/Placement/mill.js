@@ -16,7 +16,11 @@ export const automill = {
 
 /**
  *
+ * @name Auto Mill.
+ * @description Attempts to place windmills in the most optimal way possible
  * @memberof automill
+ * @example
+ * tryAutoMill();
  */
 export default function tryAutoMill() {
 	if (!automill.do) return;
