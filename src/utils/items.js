@@ -1,3 +1,4 @@
+// oh nah kys
 export const groups = [
 	{
 		id: 0,

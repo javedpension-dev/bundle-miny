@@ -1,12 +1,24 @@
 import { Howl } from "howler";
 
+/**
+ *
+ * @class SoundManager
+ */
 const SoundManager = new (class {
 	constructor() {
 		this.sounds = {};
 		this.active = true;
 	}
 
-	// PLAY SOUND:
+	/**
+	 *
+	 * @name Play Song.
+	 * @description Starts playing a song.
+	 * @memberof SoundManager
+	 * @param {string} id - Name of the song (corresponds to the file name).
+	 * @param {number} volume - Volume of the sound (0-1).
+	 * @param {boolean} loop - If the song should repeat.
+	 */
 	play(id, volume = 1, loop = true) {
 		if (!this.active || volume <= 0) return;
 
@@ -29,7 +41,14 @@ const SoundManager = new (class {
 		}
 	}
 
-	// TOGGLE MUTE:
+	/**
+	 *
+	 * @name Toggle Song Mute.
+	 * @description Toggles if the specified song should be muted or not.
+	 * @memberof SoundManager
+	 * @param {string} id - Name of the song (corresponds to the file name).
+	 * @param {boolean} mute - If the song should be muted.
+	 */
 	toggleMute(id, mute) {
 		const tmpSound = this.sounds[id];
 		if (tmpSound) {
@@ -37,7 +56,13 @@ const SoundManager = new (class {
 		}
 	}
 
-	// STOP SOUND:
+	/**
+	 *
+	 * @name Stop Song Playing.
+	 * @description Stops playing a song.
+	 * @memberof SoundManager
+	 * @param {string} id - Name of the song (corresponds to the file name).
+	 */
 	stop(id) {
 		const tmpSound = this.sounds[id];
 		if (tmpSound) {

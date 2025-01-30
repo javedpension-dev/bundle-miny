@@ -11,10 +11,24 @@ const playerManager = new (class {
 	/** @type {object} */
 	static myPlayer = {};
 
+	/**
+	 *
+	 * @name My Player;
+	 * @description Retrieves your player.
+	 * @memberof playerManager
+	 * @returns player
+	 */
 	get myPlayer() {
 		return this.constructor.myPlayer;
 	}
 
+	/**
+	 *
+	 * @name All Players;
+	 * @description Retrieves all players in memory.
+	 * @memberof playerManager
+	 * @returns player[]
+	 */
 	get allPlayers() {
 		return this.constructor.players;
 	}
@@ -22,7 +36,7 @@ const playerManager = new (class {
 	/**
 	 *
 	 * @name Get Player by SID.
-	 * @description Retrieves a player through it's session i.d.
+	 * @description Retrieves a player through it's Session I.D.
 	 * @param {number} sid - Session I.D. of the player.
 	 * @memberof playerManager
 	 * @returns player
