@@ -1,4 +1,19 @@
+/**
+ *
+ */
 export default class object {
+	/**
+	 *
+	 * @param {number} sid - session identification, used to identify the building.
+	 * @param {number} x - x coordinate.
+	 * @param {number} y - y coordinate.
+	 * @param {number} dir - direction (radians).
+	 * @param {number} scale - size.
+	 * @param {number} type - type.
+	 * @param {object} rawData - information about the building.
+	 * @param {boolean} setSID - whether or not to overwrite sid.
+	 * @param {number} ownerSID - session i.d. of the person who placed this building (null if its naturally spawning).
+	 */
 	constructor(sid, x, y, dir, scale, type, rawData, setSID, ownerSID) {
 		const data = rawData || {};
 
@@ -39,6 +54,12 @@ export default class object {
 		this.spawnPoint = data.spawnPoint;
 	}
 
+	/**
+	 *
+	 * @param sM
+	 * @param ig
+	 * @returns {number} real scale of the object hitbox.
+	 */
 	getTrueScale(sM, ig) {
 		return (
 			this.scale *
@@ -49,6 +70,10 @@ export default class object {
 		);
 	}
 
+	/**
+	 *
+	 * @param {number} value - the amount to change the health by, needs to be absolute (e.g. -25, 30, -60).
+	 */
 	changeHealth(value) {
 		this.health += value;
 

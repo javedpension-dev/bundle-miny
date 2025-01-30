@@ -5,8 +5,17 @@ import tryAutoMill from "../systems/combat/Placement/mill.js";
 import log from "../utils/log.js";
 import SoundManager from "../utils/sound.js";
 
+/**
+ *
+ * @description registers all packet hooks that we need.
+ */
 export default function addPacketHandlers() {
 	try {
+		/**
+		 *
+		 * @type {Array}
+		 */
+
 		// update players
 		client.registerPacketHandler("a", async (data) => {
 			playerManager.update(data[0]);
@@ -37,18 +46,18 @@ export default function addPacketHandlers() {
 		});
 
 		// load game object
-		client.registerPacketHandler("H", async (data) => {
+		client.registerPacketHandler("H", async (data /** @type {object} */) => {
 			objectManager.addGameObject(data);
 		});
 
-		client.registerPacketHandler("V", (data) => {
+		client.registerPacketHandler("V", (data /** @type {object} */) => {
 			if (data[0]) {
 				if (data[1]) {
 					playerManager.myPlayer.weapons = data[0];
 				} else playerManager.myPlayer.items = data[0];
 			}
 		});
-	} catch (error) {
+	} catch (error /** @type {object} */) {
 		log.error(`Unable to setup packet handlers: ${error}`);
 	}
 }

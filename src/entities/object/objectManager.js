@@ -3,12 +3,13 @@ import { itemList } from "../../utils/items";
 import object from "./object";
 
 const objectManager = new (class {
+	/** @type {Array} */
 	static buildings = [];
 
-	addGameObject(data) {
+	addGameObject(data /** @type {Array} */) {
 		const object_data = chunk(data[0], 8);
 
-		for (const chunk of object_data) {
+		for (const chunk /** @type {Array} */ of object_data) {
 			const new_object = new object(
 				chunk[0],
 				chunk[1],
@@ -25,11 +26,11 @@ const objectManager = new (class {
 		}
 	}
 
-	removeGameObject(sid) {
+	removeGameObject(sid /** @type {number} */) {
 		buildings.splice(this.getObjectBySid(sid), 1);
 	}
 
-	getObjectBySid(sid) {
+	getObjectBySid(sid /** @type {number} */) {
 		return this.buildings.find((building) => building.sid === sid);
 	}
 })();

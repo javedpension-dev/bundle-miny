@@ -1,12 +1,13 @@
 {
 	"name": "moomoo-bundle",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "A usable bundle for making moomoo.io hacks from",
 	"license": "MIT",
 	"author": "javedpension",
 	"main": "./dist/bundle.js",
 	"scripts": {
-		"build": "biome format --write && biome check --write && node ./config/esbuild.config.js --watch && sudo chmod -R u+rwx,g+rwx,o+rwx . && git config --global user.email \"javedpension@gmail.com\" && git config --global user.name \"javedpension\" && git add . && git commit -m \"automatic commit\" && git push origin master && clear"
+		"build": "biome format --write && biome check --write && node ./config/esbuild.config.js --watch && sudo chmod -R u+rwx,g+rwx,o+rwx . && npx documentation build src/** -f html -o doct && git config --global user.email \"javedpension@gmail.com\" && git config --global user.name \"javedpension\" && git add . && git commit -m \"automatic commit\" && git push origin master && clear",
+		"docgen": "jsdoc-generator ./src/**/*.js"
 	},
 	"dependencies": {
 		"esbuild": "^0.24.2",
@@ -20,6 +21,10 @@
 		"@babel/core": "^7.26.7",
 		"@babel/preset-env": "^7.26.7",
 		"babel-loader": "^9.2.1",
-		"babel-plugin-lodash": "^3.3.4"
+		"babel-plugin-lodash": "^3.3.4",
+		"eslint": "^9.19.0",
+		"eslint-plugin-jsdoc": "^50.6.3",
+		"jsdoc": "^4.0.4",
+		"jsdoc-to-markdown": "^9.1.1"
 	}
 }

@@ -2,8 +2,10 @@ import { chunk } from "lodash-es";
 import player from "./player";
 
 const playerManager = new (class {
+	/** @type {Array} */
 	static players = [];
-	static myPlayer = null;
+	/** @type {object} */
+	static myPlayer = {};
 
 	get myPlayer() {
 		return this.constructor.myPlayer;
@@ -13,11 +15,12 @@ const playerManager = new (class {
 		return this.constructor.players;
 	}
 
-	getPlayerBySid(sid) {
+	getPlayerBySid(sid /** @type {number} */) {
 		return this.constructor.players.find((player) => player.sid === sid);
 	}
 
-	add(data, isYou) {
+	add(data /** @type {Array} */, isYou /** @type {boolean} */) {
+		/** @type {object} */
 		const tmpPlayer = new player(data[1]);
 		tmpPlayer.setData(data);
 
@@ -30,21 +33,24 @@ const playerManager = new (class {
 		console.warn(this.constructor.players);
 	}
 
-	remove(sid) {
+	remove(sid /** @type {number} */) {
 		this.constructor.players.splice(
 			this.constructor.players.find((player) => player.sid === sid),
 			1,
 		);
 	}
 
-	update(data) {
+	update(data /** @type {Array} */) {
+		/** @type {Array} */
 		const chunkedData = chunk(data, 13);
 
 		for (const chunk of chunkedData) {
+			/** @type {object} */
 			const player = this.getPlayerBySid(chunk[0]);
 
 			if (!player) continue; // skip
 
+			/** @type {Array} */
 			const [
 				sid,
 				x2,

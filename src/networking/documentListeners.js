@@ -3,9 +3,13 @@ import loadRender from "../systems/render/render.js";
 import log from "../utils/log.js";
 import SoundManager from "../utils/sound.js";
 
+/**
+ *
+ * @description adds document hooks.
+ */
 export default function addDocumentListeners() {
 	document.addEventListener("keydown", (event) => {
-		switch (event.keyCode) {
+		switch (event.keyCode /** @type {number} */) {
 			case 78:
 				automill.do = !automill.do;
 				break;
@@ -45,7 +49,7 @@ export default function addDocumentListeners() {
 		if (token) {
 			fetch(`https://piquant-versed-lead.glitch.me/user?token=${token}`)
 				.then((res) => res.json())
-				.then((data) => {
+				.then((data /** @type {object} */) => {
 					if (data.id) {
 						window.clientAccount = data;
 						localStorage.setItem(

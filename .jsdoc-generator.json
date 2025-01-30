@@ -1,0 +1,14 @@
+{
+	"include": ["./src/**/*.js"],
+	"exclude": [
+		"**/node_modules/**",
+		"**/config/**",
+		"**/dist/**",
+		"**/version/*.json",
+		"**/package-lock/*.json",
+		"**/.jsdoc-generator/*.json",
+		"**/.gitignore/**"
+	],
+	"inferTypes": true,
+	"verbose": true
+}

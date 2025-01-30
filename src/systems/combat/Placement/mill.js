@@ -3,6 +3,7 @@ import { itemList } from "../../../utils/items.js";
 import util from "../../../utils/util.js";
 import place from "../place";
 
+/** @type {object} */
 export const automill = {
 	do: false,
 	last: {
@@ -14,6 +15,8 @@ export const automill = {
 
 export default function tryAutoMill() {
 	if (!automill.do) return;
+
+	/** @type {object} */
 	const myplayer = playerManager.myPlayer;
 
 	if (
@@ -22,6 +25,7 @@ export default function tryAutoMill() {
 			[automill.last.x, automill.last.y],
 		) >= util.getSquared(itemList[myplayer.items[3]].scale * 2)
 	) {
+		/** @type {number} */
 		const directionToPlace = util.getDirection(
 			automill.last.x,
 			automill.last.y,
