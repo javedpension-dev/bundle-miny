@@ -1,4 +1,5 @@
 import { decode, encode } from "msgpack-lite";
+import log from "../utils/log";
 
 /**
  * @class Client
@@ -49,7 +50,7 @@ export default class Client {
 	 * @name Decode.
 	 * @description Deserializes MsgPack messages.
 	 * @param {any} data - The incoming message.
-	 * @returns {object}
+	 * @returns {Array} - Decoded information.
 	 * @memberof Client
 	 * @example
 	 * const data = <Client>.decode(<WebSocketEvent>.data);
@@ -58,7 +59,7 @@ export default class Client {
 		try {
 			return decode(new Uint8Array(data));
 		} catch (error) {
-			console.error(`[!] Error: ${error}`);
+			log.error(`Error: ${error}`);
 		}
 	}
 
@@ -69,12 +70,17 @@ export default class Client {
 	 * @param {string} type - The type of packet.
 	 * @param {function} handler - The event(s) that will be triggered.
 	 * @memberof Client
+	 * @throws {SyntaxError}
 	 * @example
 	 * <Client>.registerPacketHandler("C", () => {
 	 *     console.log("Game Ready!");
 	 * });
 	 */
 	registerPacketHandler(type, handler) {
+		if (typeof type !== "string" || typeof handler !== "function")
+			throw new SyntaxError(
+				"Invalid arguments passed to RegisterPcketHandler method on Client.",
+			);
 		this.packetHandlers.set(type, handler);
 	}
 

@@ -14,7 +14,7 @@
 ## Install
 
 ```sh
-npm run build
+npm i
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ npm run build
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/javedpension-dev/bundle-miny/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/javedpension-dev/bundle-miny/issues).
 
 ## Show your support
 
