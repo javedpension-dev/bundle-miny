@@ -6,16 +6,15 @@ import player from "./player";
  * @class playerManager
  */
 const playerManager = new (class {
-	/** @type {Array} */
 	static players = [];
-	/** @type {object} */
 	static myPlayer = {};
 
 	/**
 	 *
-	 * @name My Player;
 	 * @description Retrieves your player.
 	 * @memberof playerManager
+	 * @method
+	 * @this playerManager
 	 * @returns player
 	 */
 	get myPlayer() {
@@ -24,10 +23,11 @@ const playerManager = new (class {
 
 	/**
 	 *
-	 * @name All Players;
 	 * @description Retrieves all players in memory.
 	 * @memberof playerManager
-	 * @returns player[]
+	 * @method
+	 * @this playerManager
+	 * @returns {Array<player>}
 	 * @example
 	 * const players = <playerManager>.allPlayers;
 	 */
@@ -37,11 +37,12 @@ const playerManager = new (class {
 
 	/**
 	 *
-	 * @name Get Player by SID.
 	 * @description Retrieves a player through it's Session I.D.
 	 * @param {number} sid - Session I.D. of the player.
 	 * @memberof playerManager
-	 * @returns player
+	 * @member
+	 * @this playerManager
+	 * @returns {player | null} - Returns the player if found, otherwise NULL.
 	 * @example
 	 * <playerManager>.getPlayerBySid(69420);
 	 */
@@ -51,17 +52,18 @@ const playerManager = new (class {
 
 	/**
 	 *
-	 * @name Get Player by SID.
 	 * @description Retrieves a player through it's session i.d.
 	 * @param {Array} data - Data of the new player.
 	 * @param {boolean} isYou - Is the player you.
 	 * @memberof playerManager
-	 * @returns player
+	 * @method
+	 * @this playerManager
+	 * @returns {player}
 	 * @example
 	 * <playerManager>.add([1, 2, 3, 4, 5, 6, 7, 8, 9], true);
 	 */
 	add(data, isYou) {
-		/** @type {object} */
+		/** @type {player} */
 		const tmpPlayer = new player(data[1]);
 		tmpPlayer.setData(data);
 
@@ -74,33 +76,40 @@ const playerManager = new (class {
 
 	/**
 	 *
-	 * @name Remove Player by SID.
 	 * @description Removes a player through it's session i.d.
 	 * @param {number} sid - Session I.D. of the player.
 	 * @memberof playerManager
+	 * @method
+	 * @this playerManager
+	 * @returns {void}
 	 * @example
 	 * <playerManager>.removePlayerBySid(69420);
 	 */
 	removePlayerBySid(sid) {
-		this.constructor.players.splice(
-			this.constructor.players.find((player) => player.sid === sid),
-			1,
+		const index = this.constructor.players.findIndex(
+			(player) => player.sid === sid,
 		);
+		if (index !== -1) {
+			this.constructor.players.splice(index, 1);
+		}
 	}
 
 	/**
 	 *
-	 * @name Update Players.
 	 * @description Updates the player's information.
-	 * @param {Array} data - Session I.D. of the player.
+	 * @param {Array<number | string>} data - Information about each player in our update radius.
 	 * @memberof playerManager
+	 * @method
+	 * @this playerManager
+	 * @returns {void}
+	 * @throws {TypeError} - Throws a TypeError if the data is in an invalid format.
 	 */
 	update(data) {
 		/** @type {Array} */
 		const chunkedData = chunk(data, 13);
 
 		for (const chunk of chunkedData) {
-			/** @type {object} */
+			/** @type {player | undefined} */
 			const player = this.getPlayerBySid(chunk[0]);
 
 			if (!player) continue; // skip

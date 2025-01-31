@@ -15,6 +15,7 @@ export default class object {
 	 * @param {number} ownerSID - Session i.d. of the person who placed this building (null if its naturally spawning).
 	 * @constructor
 	 * @memberof object
+	 * @this object
 	 */
 	constructor(sid, x, y, dir, scale, type, rawData, setSID, ownerSID) {
 		const data = rawData || {};
@@ -48,12 +49,12 @@ export default class object {
 
 	/**
 	 *
-	 * @name Real Scale.
 	 * @description Returns the true scale of an object's hitbox.
 	 * @param sM
 	 * @param ig
-	 * @returns {number} Real scale of the object hitbox.
+	 * @returns {number} - Real scale of the object hitbox.
 	 * @memberof object
+	 * @this object
 	 */
 	getTrueScale(sM, ig) {
 		return (
@@ -67,10 +68,11 @@ export default class object {
 
 	/**
 	 *
-	 * @name Change Health.
 	 * @description Changes the health of the object by the desired amount.
 	 * @param {number} value - The amount to change the health by, needs to be absolute (e.g. -25, 30, -60).
 	 * @memberof object
+	 * @this object
+	 * @returns {void}
 	 * @example
 	 * <object>.changeHealth(-20);
 	 */

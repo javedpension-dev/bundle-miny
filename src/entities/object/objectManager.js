@@ -12,10 +12,11 @@ const objectManager = new (class {
 
 	/**
 	 *
-	 * @name Add Game Object.
 	 * @description Adds a game object to our cache.
 	 * @param {Array} data - Contains information about the object to add, Compacted array.
 	 * @memberof objectManager
+	 * @this objectManager
+	 * @returns {void}
 	 * @example
 	 * <objectManager>.addGameObject([1, 2, 3, 4, 5, 6, 7, 8]);
 	 */
@@ -41,10 +42,11 @@ const objectManager = new (class {
 
 	/**
 	 *
-	 * @name removeGameObject
 	 * @description Removes an object from our cache using it's SID.
 	 * @param {Array} sid - Session I.D. of the building.
 	 * @memberof objectManager
+	 * @this objectManager
+	 * @returns {void}
 	 * @example
 	 * <objectManager>.removeGameObject(69420);
 	 */
@@ -54,13 +56,13 @@ const objectManager = new (class {
 
 	/**
 	 *
-	 * @name Get Object By SID.
 	 * @description Retrieves an object through it's session i.d.
 	 * @param {number} sid - Session I.D. of the building.
 	 * @memberof objectManager
-	 * @returns object
+	 * @this objectManager
+	 * @returns {object | null} - Returns object with the specified SID, otherwise null.
 	 * @example
-	 * <objectManager>.getObjectBySid(69420); // returns specified object if found, else null.
+	 * <objectManager>.getObjectBySid(69420);
 	 */
 	getObjectBySid(sid /** @type {number} */) {
 		return this.buildings.find((building) => building.sid === sid);

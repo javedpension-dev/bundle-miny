@@ -15,10 +15,11 @@ export default class Client {
 
 	/**
 	 *
-	 * @name Assign WebSocket.
-	 * @description Assigns and stores the game's websocket instance in cache.
+	 * @description Assigns and stores the game's websocket instance in cache. Also adds a message listener.
 	 * @param {WebSocket} ws - The WebSocket created by the bundle.
 	 * @memberof Client
+	 * @this Client
+	 * @returns {void}
 	 * @example
 	 * <Client>.assignWS(WebSocket);
 	 */
@@ -28,26 +29,29 @@ export default class Client {
 		this.ws.addEventListener("message", (event) => {
 			this.receive(event);
 		});
-		//this.ws.onmessage = this.receive.bind(this);
 	}
 
 	/**
 	 *
-	 * @name Send.
 	 * @description Sends data to the server through the game's websocket. Encodes using MsgPack Lite for efficiency.
-	 * @param {Array} data - The data to send to the server.
+	 * @param {Array<[string, (number | string | Array)]>} data - The data to send to the server.
 	 * @example <Client>.send(["6", ["Chat message"]]);
 	 * @memberof Client
+	 * @this Client
+	 * @returns {void}
 	 * @example
 	 * <Client>.send(["6", ["Chat message"]]);
 	 */
 	send(data) {
-		this.ws.send(new Uint8Array(Array.from(encode(data))));
+		try {
+			this.ws.send(new Uint8Array(Array.from(encode(data))));
+		} catch (error) {
+			log.error(error);
+		}
 	}
 
 	/**
 	 *
-	 * @name Decode.
 	 * @description Deserializes MsgPack messages.
 	 * @param {any} data - The incoming message.
 	 * @returns {Array} - Decoded information.
@@ -57,6 +61,7 @@ export default class Client {
 	 */
 	decode(data) {
 		try {
+			log.add("sigma sigma", data);
 			return decode(new Uint8Array(data));
 		} catch (error) {
 			log.error(`Error: ${error}`);

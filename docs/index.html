@@ -47,15 +47,15 @@
                       </a></li>
                     
                       <li><a
-                        href='#clientsendnull'
+                        href='#clientsend'
                         class='regular pre-open'>
-                        .Send.null
+                        .send
                       </a></li>
                     
                       <li><a
-                        href='#clientdecodenull'
+                        href='#clientdecode'
                         class='regular pre-open'>
-                        .Decode.null
+                        .decode
                       </a></li>
                     
                       <li><a
@@ -193,23 +193,23 @@
                 
                 <div class='toggle-target display-none'>
                   
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
                       <li><a
                         href='#playersetdata'
                         class='regular pre-open'>
-                        #setData
+                        .setData
                       </a></li>
-                      
+                    
                       <li><a
                         href='#playerjusthit'
                         class='regular pre-open'>
-                        #justHit
+                        .justHit
                       </a></li>
-                      
+                    
                     </ul>
+                  
                   
                   
                   
@@ -227,23 +227,23 @@
                 
                 <div class='toggle-target display-none'>
                   
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
                       <li><a
                         href='#playersetdata'
                         class='regular pre-open'>
-                        #setData
+                        .setData
                       </a></li>
-                      
+                    
                       <li><a
                         href='#playerjusthit'
                         class='regular pre-open'>
-                        #justHit
+                        .justHit
                       </a></li>
-                      
+                    
                     </ul>
+                  
                   
                   
                   
@@ -261,23 +261,23 @@
                 
                 <div class='toggle-target display-none'>
                   
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
                       <li><a
                         href='#playersetdata'
                         class='regular pre-open'>
-                        #setData
+                        .setData
                       </a></li>
-                      
+                    
                       <li><a
                         href='#playerjusthit'
                         class='regular pre-open'>
-                        #justHit
+                        .justHit
                       </a></li>
-                      
+                    
                     </ul>
+                  
                   
                   
                   
@@ -340,26 +340,6 @@
                   
                   
                 </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#players'
-                  class="">
-                  players
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#myplayer'
-                  class="">
-                  myPlayer
-                  
-                </a>
                 
                 </li>
               
@@ -541,7 +521,7 @@
               
                 
                 <li><a
-                  href='#myplayer-1'
+                  href='#myplayer'
                   class="">
                   myplayer
                   
@@ -952,9 +932,9 @@
 
   
 
-  <p>Assigns and stores the game's websocket instance in cache.</p>
+  <p>Assigns and stores the game's websocket instance in cache. Also adds a message listener.</p>
 
-    <div class='pre p1 fill-light mt0'>assignWS(ws: <a href="https://developer.mozilla.org/docs/WebSockets">WebSocket</a>)</div>
+    <div class='pre p1 fill-light mt0'>assignWS(ws: <a href="https://developer.mozilla.org/docs/WebSockets">WebSocket</a>): void</div>
   
   
 
@@ -984,6 +964,13 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
 
   
 
@@ -1009,11 +996,11 @@
       </div>
     </div>
   
-    <div class='border-bottom' id='clientsendnull'>
+    <div class='border-bottom' id='clientsend'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>Send.null</span>
+            <span class='code strong strong truncate'>send(data)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1023,7 +1010,7 @@
 
   <p>Sends data to the server through the game's websocket. Encodes using MsgPack Lite for efficiency.</p>
 
-    <div class='pre p1 fill-light mt0'>Send.null</div>
+    <div class='pre p1 fill-light mt0'>send(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;[<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)]>): void</div>
   
   
 
@@ -1040,7 +1027,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;[<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)]>)</code>
 	    The data to send to the server.
 
           </div>
@@ -1052,6 +1039,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -1081,11 +1075,11 @@
       </div>
     </div>
   
-    <div class='border-bottom' id='clientdecodenull'>
+    <div class='border-bottom' id='clientdecode'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>Decode.null</span>
+            <span class='code strong strong truncate'>decode(data)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1095,7 +1089,7 @@
 
   <p>Deserializes MsgPack messages.</p>
 
-    <div class='pre p1 fill-light mt0'>Decode.null</div>
+    <div class='pre p1 fill-light mt0'>decode(data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1464,7 +1458,7 @@
 
   <p>Changes the health of the object by the desired amount.</p>
 
-    <div class='pre p1 fill-light mt0'>changeHealth(value: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+    <div class='pre p1 fill-light mt0'>changeHealth(value: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): void</div>
   
   
 
@@ -1493,6 +1487,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -1588,7 +1589,7 @@
 
   <p>Adds a game object to our cache.</p>
 
-    <div class='pre p1 fill-light mt0'>addGameObject(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</div>
+    <div class='pre p1 fill-light mt0'>addGameObject(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): void</div>
   
   
 
@@ -1617,6 +1618,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -1647,7 +1655,7 @@
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>removeGameObject</span>
+            <span class='code strong strong truncate'>removeGameObject(sid)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1657,7 +1665,7 @@
 
   <p>Removes an object from our cache using it's SID.</p>
 
-    <div class='pre p1 fill-light mt0'>removeGameObject</div>
+    <div class='pre p1 fill-light mt0'>removeGameObject(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): void</div>
   
   
 
@@ -1686,6 +1694,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -1726,7 +1741,7 @@
 
   <p>Retrieves an object through it's session i.d.</p>
 
-    <div class='pre p1 fill-light mt0'>getObjectBySid(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+    <div class='pre p1 fill-light mt0'>getObjectBySid(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): (<a href="#object">object</a> | null)</div>
   
   
 
@@ -1758,8 +1773,8 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        object
+      <code>(<a href="#object">object</a> | null)</code>:
+        Returns object with the specified SID, otherwise null.
 
       
     
@@ -1773,7 +1788,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>&lt;objectManager&gt;.<span class="hljs-title function_">getObjectBySid</span>(<span class="hljs-number">69420</span>); <span class="hljs-comment">// returns specified object if found, else null.</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>&lt;objectManager&gt;.<span class="hljs-title function_">getObjectBySid</span>(<span class="hljs-number">69420</span>);</pre>
     
   
 
@@ -2003,9 +2018,7 @@
   
 
   
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
     <div class='border-bottom' id='playersetdata'>
@@ -2022,7 +2035,7 @@
 
   <p>Assigns default data to player.</p>
 
-    <div class='pre p1 fill-light mt0'>setData(data: <a href="#object">object</a>)</div>
+    <div class='pre p1 fill-light mt0'>setData(data: [<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): void</div>
   
   
 
@@ -2039,8 +2052,9 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="#object">object</a>)</code>
-	    
+            <span class='code bold'>data</span> <code class='quiet'>([<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>])</code>
+	    The data to set.
+
           </div>
           
         </div>
@@ -2051,6 +2065,13 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
 
   
 
@@ -2060,7 +2081,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]);</pre>
+      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([(id), (sid), (name), (x), (y), (dir), (health), (maxHealth), (scale), (skinColor)]);</pre>
     
   
 
@@ -2090,7 +2111,7 @@
 
   <p>Called when player hits.</p>
 
-    <div class='pre p1 fill-light mt0'>justHit()</div>
+    <div class='pre p1 fill-light mt0'>justHit(): void</div>
   
   
 
@@ -2105,6 +2126,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -2126,6 +2154,8 @@
     </div>
   
 </div>
+
+  
 
   
 
@@ -2155,7 +2185,7 @@
   
     <p>
       Type:
-      <a href="#object">object</a>
+      (<a href="#player">player</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)
     </p>
   
   
@@ -2180,9 +2210,7 @@
   
 
   
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
     <div class='border-bottom' id='playersetdata'>
@@ -2199,7 +2227,7 @@
 
   <p>Assigns default data to player.</p>
 
-    <div class='pre p1 fill-light mt0'>setData(data: <a href="#object">object</a>)</div>
+    <div class='pre p1 fill-light mt0'>setData(data: [<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): void</div>
   
   
 
@@ -2216,8 +2244,9 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="#object">object</a>)</code>
-	    
+            <span class='code bold'>data</span> <code class='quiet'>([<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>])</code>
+	    The data to set.
+
           </div>
           
         </div>
@@ -2228,6 +2257,13 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
 
   
 
@@ -2237,7 +2273,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]);</pre>
+      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([(id), (sid), (name), (x), (y), (dir), (health), (maxHealth), (scale), (skinColor)]);</pre>
     
   
 
@@ -2267,7 +2303,7 @@
 
   <p>Called when player hits.</p>
 
-    <div class='pre p1 fill-light mt0'>justHit()</div>
+    <div class='pre p1 fill-light mt0'>justHit(): void</div>
   
   
 
@@ -2282,6 +2318,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -2303,6 +2346,8 @@
     </div>
   
 </div>
+
+  
 
   
 
@@ -2357,9 +2402,7 @@
   
 
   
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
     <div class='border-bottom' id='playersetdata'>
@@ -2376,7 +2419,7 @@
 
   <p>Assigns default data to player.</p>
 
-    <div class='pre p1 fill-light mt0'>setData(data: <a href="#object">object</a>)</div>
+    <div class='pre p1 fill-light mt0'>setData(data: [<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): void</div>
   
   
 
@@ -2393,8 +2436,9 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="#object">object</a>)</code>
-	    
+            <span class='code bold'>data</span> <code class='quiet'>([<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>])</code>
+	    The data to set.
+
           </div>
           
         </div>
@@ -2405,6 +2449,13 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
 
   
 
@@ -2414,7 +2465,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]);</pre>
+      <pre class='p1 overflow-auto round fill-light'>&lt;player&gt;.<span class="hljs-title function_">setData</span>([(id), (sid), (name), (x), (y), (dir), (health), (maxHealth), (scale), (skinColor)]);</pre>
     
   
 
@@ -2444,7 +2495,7 @@
 
   <p>Called when player hits.</p>
 
-    <div class='pre p1 fill-light mt0'>justHit()</div>
+    <div class='pre p1 fill-light mt0'>justHit(): void</div>
   
   
 
@@ -2459,6 +2510,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -2480,6 +2538,8 @@
     </div>
   
 </div>
+
+  
 
   
 
@@ -2536,7 +2596,7 @@
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>myPlayer</span>
+            <span class='code strong strong truncate'>myPlayer()</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2546,7 +2606,7 @@
 
   <p>Retrieves your player.</p>
 
-    <div class='pre p1 fill-light mt0'>myPlayer</div>
+    <div class='pre p1 fill-light mt0'>myPlayer(): any</div>
   
   
 
@@ -2593,7 +2653,7 @@
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>allPlayers</span>
+            <span class='code strong strong truncate'>allPlayers()</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2603,7 +2663,7 @@
 
   <p>Retrieves all players in memory.</p>
 
-    <div class='pre p1 fill-light mt0'>allPlayers</div>
+    <div class='pre p1 fill-light mt0'>allPlayers(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#player">player</a>></div>
   
   
 
@@ -2621,9 +2681,8 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        player[]
-
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#player">player</a>></code>:
+        
       
     
   
@@ -2656,7 +2715,7 @@
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getPlayerBySid(sid)</span>
+            <span class='code strong strong truncate'>getPlayerBySid</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2666,7 +2725,7 @@
 
   <p>Retrieves a player through it's Session I.D.</p>
 
-    <div class='pre p1 fill-light mt0'>getPlayerBySid(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+    <div class='pre p1 fill-light mt0'>getPlayerBySid</div>
   
   
 
@@ -2698,8 +2757,8 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        player
+      <code>(<a href="#player">player</a> | null)</code>:
+        Returns the player if found, otherwise NULL.
 
       
     
@@ -2743,7 +2802,7 @@
 
   <p>Retrieves a player through it's session i.d.</p>
 
-    <div class='pre p1 fill-light mt0'>add(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, isYou: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): any</div>
+    <div class='pre p1 fill-light mt0'>add(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, isYou: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="#player">player</a></div>
   
   
 
@@ -2784,9 +2843,8 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        player
-
+      <code><a href="#player">player</a></code>:
+        
       
     
   
@@ -2829,7 +2887,7 @@
 
   <p>Removes a player through it's session i.d.</p>
 
-    <div class='pre p1 fill-light mt0'>removePlayerBySid(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+    <div class='pre p1 fill-light mt0'>removePlayerBySid(sid: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): void</div>
   
   
 
@@ -2858,6 +2916,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -2898,7 +2963,7 @@
 
   <p>Updates the player's information.</p>
 
-    <div class='pre p1 fill-light mt0'>update(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</div>
+    <div class='pre p1 fill-light mt0'>update(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)>): void</div>
   
   
 
@@ -2915,8 +2980,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Session I.D. of the player.
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)>)</code>
+	    Information about each player in our update radius.
 
           </div>
           
@@ -2928,9 +2993,24 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Throws</div>
+    <ul>
+      
+        <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypeError">TypeError</a>: Throws a TypeError if the data is in an invalid format.
+</li>
+      
+    </ul>
   
 
   
@@ -2966,114 +3046,6 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='players'>
-      players
-    </h3>
-    
-    
-  </div>
-  
-
-  
-    <div class='pre p1 fill-light mt0'>players</div>
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='myplayer'>
-      myPlayer
-    </h3>
-    
-    
-  </div>
-  
-
-  
-    <div class='pre p1 fill-light mt0'>myPlayer</div>
-  
-    <p>
-      Type:
-      <a href="#object">object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='tmpplayer'>
       tmpPlayer
     </h3>
@@ -3087,7 +3059,7 @@
   
     <p>
       Type:
-      <a href="#object">object</a>
+      <a href="#player">player</a>
     </p>
   
   
@@ -3964,7 +3936,7 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='myplayer-1'>
+    <h3 class='fl m0' id='myplayer'>
       myplayer
     </h3>
     

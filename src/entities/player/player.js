@@ -39,11 +39,13 @@ export default class player {
 
 	/**
 	 *
-	 * @name Set Data.
 	 * @description Assigns default data to player.
-	 * @param {object} data
+	 * @param {[number, number, string, number, number, number, number, number, number]} data - The data to set.
+	 * @memberof player
+	 * @this player
+	 * @returns {void}
 	 * @example
-	 * <player>.setData([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+	 * <player>.setData([(id), (sid), (name), (x), (y), (dir), (health), (maxHealth), (scale), (skinColor)]);
 	 */
 	setData(data) {
 		[
@@ -67,6 +69,9 @@ export default class player {
 
 	/**
 	 * @description Called when player hits.
+	 * @memberof player
+	 * @this player
+	 * @returns {void}
 	 */
 	justHit() {
 		this.reloads[this.weaponIndex] =
