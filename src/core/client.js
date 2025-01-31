@@ -53,9 +53,10 @@ export default class Client {
 	/**
 	 *
 	 * @description Deserializes MsgPack messages.
-	 * @param {any} data - The incoming message.
+	 * @param {ArrayBuffer} data - The incoming message.
 	 * @returns {Array} - Decoded information.
 	 * @memberof Client
+	 * @this Client
 	 * @example
 	 * const data = <Client>.decode(<WebSocketEvent>.data);
 	 */
@@ -70,11 +71,12 @@ export default class Client {
 
 	/**
 	 *
-	 * @name Register Packet Handler.
 	 * @description Registers packet event hooks on the WebSocket.prototype.onmessage event.
 	 * @param {string} type - The type of packet.
 	 * @param {function} handler - The event(s) that will be triggered.
 	 * @memberof Client
+	 * @this Client
+	 * @returns {void}
 	 * @throws {SyntaxError}
 	 * @example
 	 * <Client>.registerPacketHandler("C", () => {
@@ -91,10 +93,11 @@ export default class Client {
 
 	/**
 	 *
-	 * @name Receive Message.
 	 * @description Receives incoming messages from the game.
-	 * @param {object} event - Message event. Use <event>.data to get the data.
+	 * @param {WebSocket.event} event - Message event. Use <event>.data to get the data.
 	 * @memberof Client
+	 * @this Client
+	 * @returns {void}
 	 * @example
 	 * <WebSocket>.addEventListener("message", (event) => {
 	 *     <Client>.receive(<WebSocketEvent>);

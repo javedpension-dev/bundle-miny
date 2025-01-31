@@ -4,9 +4,10 @@ import playerManager from "../../entities/player/playerManager.js";
 // optimization neeeed: if going to switch weapon anywyas just do thathere
 /**
  *
- * @description the default function used to place ingame items.
- * @param {object} type - type of the object.
- * @param {number} dir - direction to place the object (radians).
+ * @description The default function used to place ingame items.
+ * @param {object} type - Type of the object.
+ * @param {number} dir - Direction to place the object (radians).
+ * @returns {void}
  * @example
  * place(myPlayer.items[2], 0); // places "spike" type at direction 0.
  */

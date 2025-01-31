@@ -385,16 +385,6 @@
               
                 
                 <li><a
-                  href='#registerpackethandler'
-                  class="">
-                  registerPacketHandler
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#'
                   class="">
                   
@@ -1089,7 +1079,7 @@
 
   <p>Deserializes MsgPack messages.</p>
 
-    <div class='pre p1 fill-light mt0'>decode(data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>decode(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1106,7 +1096,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>)</code>
 	    The incoming message.
 
           </div>
@@ -1166,7 +1156,7 @@
 
   <p>Registers packet event hooks on the WebSocket.prototype.onmessage event.</p>
 
-    <div class='pre p1 fill-light mt0'>registerPacketHandler(type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, handler: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+    <div class='pre p1 fill-light mt0'>registerPacketHandler(type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, handler: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>): void</div>
   
   
 
@@ -1204,6 +1194,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -1253,7 +1250,7 @@
 
   <p>Receives incoming messages from the game.</p>
 
-    <div class='pre p1 fill-light mt0'>receive(event: <a href="#object">object</a>)</div>
+    <div class='pre p1 fill-light mt0'>receive(event: WebSocket.event): void</div>
   
   
 
@@ -1270,7 +1267,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>event</span> <code class='quiet'>(<a href="#object">object</a>)</code>
+            <span class='code bold'>event</span> <code class='quiet'>(WebSocket.event)</code>
 	    Message event. Use 
 .data to get the data.
 
@@ -1283,6 +1280,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -3258,8 +3262,8 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='registerpackethandler'>
-      registerPacketHandler
+    <h3 class='fl m0' id=''>
+      
     </h3>
     
     
@@ -3267,7 +3271,7 @@
   
 
   
-    <div class='pre p1 fill-light mt0'>registerPacketHandler</div>
+    <div class='pre p1 fill-light mt0'></div>
   
     <p>
       Type:
@@ -3325,7 +3329,7 @@
   
     <p>
       Type:
-      <a href="#object">object</a>
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
     </p>
   
   
@@ -3379,61 +3383,7 @@
   
     <p>
       Type:
-      <a href="#object">object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id=''>
-      
-    </h3>
-    
-    
-  </div>
-  
-
-  
-    <div class='pre p1 fill-light mt0'></div>
-  
-    <p>
-      Type:
-      <a href="#object">object</a>
+      any
     </p>
   
   
@@ -3640,9 +3590,9 @@
   </div>
   
 
-  <p>the default function used to place ingame items.</p>
+  <p>The default function used to place ingame items.</p>
 
-    <div class='pre p1 fill-light mt0'>place(type: <a href="#object">object</a>, dir: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+    <div class='pre p1 fill-light mt0'>place(type: <a href="#object">object</a>, dir: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): void</div>
   
   
 
@@ -3660,7 +3610,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>type</span> <code class='quiet'>(<a href="#object">object</a>)</code>
-	    type of the object.
+	    Type of the object.
 
           </div>
           
@@ -3669,7 +3619,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>dir</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    direction to place the object (radians).
+	    Direction to place the object (radians).
 
           </div>
           
@@ -3680,6 +3630,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -3766,7 +3723,7 @@
 
   <p>Attempts to place windmills in the most optimal way possible</p>
 
-    <div class='pre p1 fill-light mt0'>tryAutoMill()</div>
+    <div class='pre p1 fill-light mt0'>tryAutoMill(): void</div>
   
   
 
@@ -3781,6 +3738,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   
@@ -3876,7 +3840,7 @@
 
   <p>Attempts to place windmills in the most optimal way possible</p>
 
-    <div class='pre p1 fill-light mt0'>tryAutoMill()</div>
+    <div class='pre p1 fill-light mt0'>tryAutoMill(): void</div>
   
   
 
@@ -3891,6 +3855,13 @@
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
   
 
   

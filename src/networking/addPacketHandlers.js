@@ -11,11 +11,6 @@ import SoundManager from "../utils/sound.js";
  */
 export default function addPacketHandlers() {
 	try {
-		/**
-		 *
-		 * @type {Array}
-		 */
-
 		// update players
 		client.registerPacketHandler("a", async (data) => {
 			playerManager.update(data[0]);
@@ -46,18 +41,18 @@ export default function addPacketHandlers() {
 		});
 
 		// load game object
-		client.registerPacketHandler("H", async (data /** @type {object} */) => {
+		client.registerPacketHandler("H", async (data /** @type {Array} */) => {
 			objectManager.addGameObject(data);
 		});
 
-		client.registerPacketHandler("V", (data /** @type {object} */) => {
+		client.registerPacketHandler("V", (data /** @type {Array} */) => {
 			if (data[0]) {
 				if (data[1]) {
 					playerManager.myPlayer.weapons = data[0];
 				} else playerManager.myPlayer.items = data[0];
 			}
 		});
-	} catch (error /** @type {object} */) {
+	} catch (error /** @type {any} */) {
 		log.error(`Unable to setup packet handlers: ${error}`);
 	}
 }

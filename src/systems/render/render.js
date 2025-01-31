@@ -26,14 +26,13 @@ export default function loadRender() {
 		// MOVE CAMERA:
 		if (player) {
 			/** @type {number} */
-			const tmpDist = util.getDistance([camX, camY], [player.x, player.y]);
-			const tmpDir = util.getDirection(player.x, player.y, camX, camY);
-			const camSpd = Math.min(
-				util.getSquared(tmpDist) * 0.01 * delta,
-				util.getSquared(tmpDist),
+			const tmpDist = Math.sqrt(
+				util.getDistance([camX, camY], [player.x, player.y]),
 			);
+			const tmpDir = util.getDirection(player.x, player.y, camX, camY);
+			const camSpd = Math.min(tmpDist * 0.01 * delta, tmpDist);
 
-			if (util.getSquared(tmpDist) > 0.05) {
+			if (tmpDist > 0.05) {
 				camX += camSpd * Math.cos(tmpDir);
 				camY += camSpd * Math.sin(tmpDir);
 			} else {

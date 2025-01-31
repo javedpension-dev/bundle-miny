@@ -19,6 +19,7 @@ export const automill = {
  * @name Auto Mill.
  * @description Attempts to place windmills in the most optimal way possible
  * @memberof automill
+ * @returns {void}
  * @example
  * tryAutoMill();
  */
