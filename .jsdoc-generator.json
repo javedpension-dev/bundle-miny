@@ -4,6 +4,7 @@
 		"**/node_modules/**",
 		"**/config/**",
 		"**/dist/**",
+		"**/docs/**",
 		"**/version/*.json",
 		"**/package-lock/*.json",
 		"**/.jsdoc-generator/*.json",
