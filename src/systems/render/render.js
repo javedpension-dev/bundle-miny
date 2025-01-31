@@ -103,16 +103,17 @@ export default function loadRender() {
 					17,
 					11,
 				);
+				render.fill();
 
-				mainContext.fill();
-				mainContext.fillStyle = "#51cacd";
-				mainContext.roundRect(
+				render.fillStyle = "#51cacd";
+				render.roundRect(
 					tmp.x - xOffset - config.healthBarWidth,
 					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad,
 					config.healthBarWidth * 2 * (tmp.smoothCurrentVel / tmp.maxVel),
 					17 - config.healthBarPad * 2,
 					20,
 				);
+				render.fill();
 			}
 		} else {
 			camX = config.mapScale / 2;
