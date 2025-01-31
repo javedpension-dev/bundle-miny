@@ -34,6 +34,9 @@ export default {
 	iconPad: 0.9,
 	crownIconScale: 60,
 	crownPad: 35,
+	darkOutlineColor: "#3d3f42",
+	outlineColor: "#525252",
+	outlineWidth: 5.5,
 
 	maxScreenWidth: 1920,
 	maxScreenHeight: 1080,

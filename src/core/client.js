@@ -62,7 +62,6 @@ export default class Client {
 	 */
 	decode(data) {
 		try {
-			log.add("sigma sigma", data);
 			return decode(new Uint8Array(data));
 		} catch (error) {
 			log.error(`Error: ${error}`);

@@ -88,11 +88,31 @@ export default function loadRender() {
 			 */
 			const yOffset = camY - config.maxScreenHeight / 2;
 
+			render.strokeStyle = config.darkOutlineColor;
+
 			for (const tmp /** @type {object} */ of playerManager.allPlayers) {
+				tmp.smoothCurrentVel += (tmp.currentVel - tmp.maxVel) * 0.3;
+
 				render.beginPath();
-				render.fillStyle = "red";
-				render.arc(tmp.x - xOffset, tmp.y - yOffset, 35, 0, Math.PI * 2);
-				render.fill();
+				render.fillStyle = config.darkOutlineColor;
+
+				render.roundRect(
+					tmp.x - xOffset - config.healthBarWidth - config.healthBarPad,
+					tmp.y - yOffset + tmp.scale + config.nameY + 35,
+					config.healthBarWidth * 2 + config.healthBarPad * 2,
+					17,
+					11,
+				);
+
+				mainContext.fill();
+				mainContext.fillStyle = "#51cacd";
+				mainContext.roundRect(
+					tmp.x - xOffset - config.healthBarWidth,
+					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad,
+					config.healthBarWidth * 2 * (tmp.smoothCurrentVel / tmp.maxVel),
+					17 - config.healthBarPad * 2,
+					20,
+				);
 			}
 		} else {
 			camX = config.mapScale / 2;

@@ -24,6 +24,9 @@ export default class player {
 		this.y2 = 0;
 		this.xVel = 0;
 		this.yVel = 0;
+		this.maxVel = 4;
+		this.currentVel = 2;
+		this.smoothCurrentVel = 0;
 		this.weaponIndex = 0;
 		this.buildIndex = 0;
 		this.weapons = [0];
