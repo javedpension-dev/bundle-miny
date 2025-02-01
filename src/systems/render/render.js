@@ -98,7 +98,7 @@ export default function loadRender() {
 
 				render.roundRect(
 					tmp.x - xOffset - config.healthBarWidth - config.healthBarPad,
-					tmp.y - yOffset + tmp.scale + config.nameY + 35,
+					tmp.y - yOffset + tmp.scale + config.nameY + 20,
 					config.healthBarWidth * 2 + config.healthBarPad * 2,
 					17,
 					11,
@@ -108,7 +108,7 @@ export default function loadRender() {
 				render.fillStyle = "#51cacd";
 				render.roundRect(
 					tmp.x - xOffset - config.healthBarWidth,
-					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad,
+					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad + 20,
 					config.healthBarWidth * 2 * (tmp.smoothCurrentVel / tmp.maxVel),
 					17 - config.healthBarPad * 2,
 					20,
