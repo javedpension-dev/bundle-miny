@@ -8,7 +8,7 @@ esbuild
 		entryPoints: ["src/core/index.js"],
 		bundle: true,
 		outfile: "dist/bundle.js",
-		minify: false,
+		minify: true,
 		sourcemap: true,
 		target: ["es2020"],
 		loader: { ".js": "jsx" },
