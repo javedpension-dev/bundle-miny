@@ -90,8 +90,8 @@ export default function loadRender() {
 
 			render.strokeStyle = config.darkOutlineColor;
 
-			for (const tmp /** @type {object} */ of playerManager.allPlayers) {
-				tmp.smoothCurrentVel += (tmp.currentVel - tmp.maxVel) * 0.3;
+			for (const tmp /** @type {player} */ of playerManager.allPlayers) {
+				tmp.smoothCurrentVel += (tmp.maxVel - tmp.currentVel) * 0.35;
 
 				render.beginPath();
 				render.fillStyle = config.darkOutlineColor;
