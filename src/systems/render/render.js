@@ -101,7 +101,7 @@ export default function loadRender() {
 				render.fillStyle = config.darkOutlineColor;
 				render.roundRect(
 					tmpObj.x - xOffset - config.healthBarWidth - config.healthBarPad,
-					tmpObj.y - yOffset + tmpObj.scale + config.nameY,
+					tmpObj.y - yOffset + tmpObj.scale + config.nameY - 20,
 					config.healthBarWidth * 2 + config.healthBarPad * 2,
 					17,
 					8,
@@ -115,7 +115,8 @@ export default function loadRender() {
 						yOffset +
 						tmpObj.scale +
 						config.nameY +
-						config.healthBarPad,
+						config.healthBarPad -
+						20,
 					config.healthBarWidth * 2 * (tmpObj.smoothCurrentVel / tmpObj.maxVel),
 					17 - config.healthBarPad * 2,
 					7,
