@@ -90,15 +90,18 @@ export default function loadRender() {
 
 			render.strokeStyle = config.darkOutlineColor;
 
-			for (const tmp /** @type {player} */ of playerManager.allPlayers) {
-				tmp.smoothCurrentVel += (tmp.currentVel - tmp.smoothCurrentVel) * 0.35;
+			for (const tmpObj /** @type {player} */ of playerManager.allPlayers) {
+				tmpObj.smoothCurrentVel +=
+					(tmpObj.currentVel - tmpObj.smoothCurrentVel) * 0.35;
 
 				render.beginPath();
-				render.fillStyle = config.darkOutlineColor;
+				render.strokeStyle = config.darkOutlineColor;
 
+				const tmpWidth = config.healthBarWidth;
+				render.fillStyle = darkOutlineColor;
 				render.roundRect(
-					tmp.x - xOffset - config.healthBarWidth - config.healthBarPad,
-					tmp.y - yOffset + tmp.scale + config.nameY + 20,
+					tmpObj.x - xOffset - config.healthBarWidth - config.healthBarPad,
+					tmpObj.y - yOffset + tmpObj.scale + config.nameY,
 					config.healthBarWidth * 2 + config.healthBarPad * 2,
 					17,
 					8,
@@ -107,9 +110,13 @@ export default function loadRender() {
 
 				render.fillStyle = "#51cacd";
 				render.roundRect(
-					tmp.x - xOffset - config.healthBarWidth,
-					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad + 20,
-					config.healthBarWidth * 2 * (tmp.smoothCurrentVel / tmp.maxVel),
+					tmpObj.x - xOffset - config.healthBarWidth,
+					tmpObj.y -
+						yOffset +
+						tmpObj.scale +
+						config.nameY +
+						config.healthBarPad,
+					config.healthBarWidth * 2 * (tmpObj.smoothCurrentVel / tmpObj.maxVel),
 					17 - config.healthBarPad * 2,
 					7,
 				);
