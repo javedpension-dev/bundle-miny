@@ -98,7 +98,7 @@ export default function loadRender() {
 				render.strokeStyle = config.darkOutlineColor;
 
 				const tmpWidth = config.healthBarWidth;
-				render.fillStyle = darkOutlineColor;
+				render.fillStyle = config.darkOutlineColor;
 				render.roundRect(
 					tmpObj.x - xOffset - config.healthBarWidth - config.healthBarPad,
 					tmpObj.y - yOffset + tmpObj.scale + config.nameY,
