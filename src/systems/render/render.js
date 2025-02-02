@@ -91,7 +91,7 @@ export default function loadRender() {
 			render.strokeStyle = config.darkOutlineColor;
 
 			for (const tmp /** @type {player} */ of playerManager.allPlayers) {
-				tmp.smoothCurrentVel += (tmp.maxVel - tmp.currentVel) * 0.35;
+				tmp.smoothCurrentVel += (tmp.currentVel - tmp.smoothCurrentVel) * 0.35;
 
 				render.beginPath();
 				render.fillStyle = config.darkOutlineColor;
@@ -101,7 +101,7 @@ export default function loadRender() {
 					tmp.y - yOffset + tmp.scale + config.nameY + 20,
 					config.healthBarWidth * 2 + config.healthBarPad * 2,
 					17,
-					11,
+					8,
 				);
 				render.fill();
 
@@ -111,7 +111,7 @@ export default function loadRender() {
 					tmp.y - yOffset + tmp.scale + config.nameY + config.healthBarPad + 20,
 					config.healthBarWidth * 2 * (tmp.smoothCurrentVel / tmp.maxVel),
 					17 - config.healthBarPad * 2,
-					20,
+					7,
 				);
 				render.fill();
 			}
